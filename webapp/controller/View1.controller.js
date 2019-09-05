@@ -9,16 +9,15 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel"], fun
 			this.identificador = this.byId("identificador");	// sap.m.SearchField
 			
 			this.oModel = this.getOwnerComponent().getModel(); // new JSONModel();
-			this.getView().setModel(this.oModel);
+			// this.getView().setModel(this.oModel);
 			this.oModel.attachRequestCompleted(this.onRequestCompleted, this);
 			
-			this.oOptionsModel = new JSONModel({
-				id: 1,
-				ocupado: false
-			});
+			this.oOptionsModel = this.getOwnerComponent().getModel("options");
+			this.oOptionsModel.setProperty("/id", 1)
+			this.oOptionsModel.setProperty("/ocupado", false)
 			
 			// this.byId("form").setModel(this.oOptionsModel, "options");
-			this.getView().setModel(this.oOptionsModel, "options");
+			// this.getView().setModel(this.oOptionsModel, "options");
 		},
 
 		onRequestCompleted: function(oEvent){
