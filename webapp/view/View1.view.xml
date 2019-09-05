@@ -10,7 +10,7 @@
 						<!--<SearchField id="identificador" placeholder="ID do personagem" value="1" search="onPressBuscar"/>-->
 						<!--<Slider id="identificador" min="1" max="50" change="onPressBuscar" liveChange="onPressBuscar"/>-->
 						
-						<StepInput visible="{= ${device>/system/phone} ? false : true }" value="{options>/id}" change="onPressBuscar" />
+						<StepInput class="sapUiResponsiveMargin" visible="{= ${device>/system/phone} ? false : true }" value="{options>/id}" change="onPressBuscar" />
 						<Slider visible="{device>/system/phone}" value="{options>/id}" min="1" max="50" liveChange="onPressBuscar"/>
 						
 						<sap.ui.layout.form:SimpleForm busyIndicatorDelay="0" busy="{options>/ocupado}" editable="true" layout="ResponsiveGridLayout" id="form">
